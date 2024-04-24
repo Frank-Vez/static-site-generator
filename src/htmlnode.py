@@ -10,10 +10,13 @@ class HTMLnode:
     raise NotImplementedError
   
   def props_to_html(self):
-    ...
+    parameters =""
+    for key,value in self.props.items():
+     parameters += " " + key + '="' + value + '"'
+    return parameters
   
+  def __repr__(self):
+        return f"HTMLnode({self.tag}, {self.value}, children: {self.children}, {self.props})"
 
-
-print(HTMLnode("Yesssir",1,3))
 
 
