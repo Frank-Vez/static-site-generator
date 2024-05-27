@@ -12,10 +12,10 @@ class Leafnode(HTMLnode):
       htmltag = self.value
       return htmltag
     else:
-      htmltag =+ f"<{self.tag}"
+      htmltag += f"<{self.tag}"
       if self.props != None:
-        htmltag =+ f"{super().props_to_html(self)}"
-      htmltag =+ f" >{self.value}</{self.tag}>"
+        htmltag += f"{super().props_to_html()}"
+      htmltag += f">{self.value}</{self.tag}>"
       return htmltag
     
 
